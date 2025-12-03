@@ -1,0 +1,107 @@
+.nosotros-hero {
+  background-color: var(--color-primary-dark);
+  padding: 6rem 0;
+}
+
+/* ======================================================
+   SUPERIOR — Título + Imagen (FLEX)
+====================================================== */
+.nosotros-top {
+  max-width: 1200px;
+  margin: 0 auto 4rem auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 4rem;
+}
+
+/* Columna izquierda */
+.nosotros-left {
+  flex: 1;
+}
+
+/* Columna derecha */
+.nosotros-right {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+/* TÍTULO */
+.nosotros-title {
+  font-size: 85px;
+  font-weight: 800;
+  line-height: 1.05;
+  color: var(--color-white);
+  margin: 0;
+}
+
+/* Highlight */
+.title-highlight {
+  background: var(--color-primary);
+  padding: 0.6rem 1.2rem;
+  border-radius: 8px;
+  display: inline-block;
+  color: var(--color-primary-dark);
+  margin-top: 0.8rem;
+}
+
+/* IMAGEN */
+.nosotros-img {
+  width: 100%;
+  max-width: 480px;
+  border-radius: 12px;
+  object-fit: cover;
+}
+
+/* ======================================================
+   TEXTO INFERIOR
+====================================================== */
+.nosotros-bottom {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.nosotros-bottom p {
+  color: var(--color-white);
+  font-size: 1.25rem;
+  line-height: 1.7;
+  margin-bottom: 1.8rem;
+}
+
+.nosotros-link {
+  display: inline-block;
+  margin-top: 1rem;
+  color: var(--color-white);
+  font-weight: 600;
+  font-size: 1.25rem;
+  text-decoration: none;
+}
+
+/* ======================================================
+   RESPONSIVE
+====================================================== */
+@media (max-width: 850px) {
+
+  .nosotros-top {
+    flex-direction: column;
+    text-align: left;
+    gap: 2.5rem;
+  }
+
+  .nosotros-title {
+    font-size: 48px;
+  }
+
+  .nosotros-img {
+    max-width: 340px;
+  }
+
+  .title-highlight {
+    padding: 0.4rem 1rem;
+
+  }
+  .nosotros-bottom{
+    padding: 10px;
+  }
+}

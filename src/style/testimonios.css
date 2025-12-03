@@ -1,0 +1,129 @@
+.testimonios-section {
+  background: #ecf3e7;
+  padding: 80px 20px;
+  text-align: center;
+}
+
+/* HEADER */
+.testimonios-header h2 {
+  font-size: 40px;
+  font-weight: 700;
+  color: #053f2d;
+}
+
+.testimonios-header .highlight {
+  background: #cee75e;
+  padding: 0 6px;
+  border-radius: 6px;
+}
+
+.testimonios-header p {
+  max-width: 600px;
+  margin: 12px auto 40px;
+  color: #455347;
+  line-height: 1.6;
+}
+
+/* TESTIMONIOS GRID */
+.testimonios-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 26px;
+  max-width: 1100px;
+  margin: auto;
+}
+
+.testimonio-card {
+  background: #ffffff;
+  padding: 26px;
+  border-radius: 14px;
+  text-align: left;
+  min-height: 220px;
+}
+
+.quote-icon {
+  width: 26px;
+  margin-bottom: 14px;
+}
+
+.testimonio-card .texto {
+  font-size: 15px;
+  line-height: 1.6;
+  margin-bottom: 20px;
+  color: #05291e;
+}
+
+.testimonio-card .autor {
+  font-size: 13px;
+  color: #053f2d;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+}
+
+.testimonio-card .autor span {
+  width: 10px;
+  height: 3px;
+  background: #053f2d;
+  margin-right: 8px;
+  border-radius: 4px;
+}
+
+/* VIDEOS GRID */
+.videos-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 26px;
+  max-width: 1100px;
+  margin: 50px auto;
+}
+
+.video-item {
+  width: 100%;
+  border-radius: 10px;
+  background: #d7dccf;
+  height: 240px;
+  object-fit: cover;
+}
+
+/* BOTÓN */
+.btn-wrapper {
+  margin-top: 20px;
+}
+
+.btn-proceso {
+  background: #053f2d;
+  color: white;
+  padding: 12px 22px;
+  border-radius: 30px;
+  border: none;
+  cursor: pointer;
+  font-size: 15px;
+  transition: 0.2s;
+}
+
+.btn-proceso:hover {
+  background-color: var(--color-yellow);
+  transform: translateY(-2px);
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  .testimonios-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .videos-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .video-item {
+    height: 180px;
+  }
+}
+
+@media (max-width: 600px) {
+  .videos-grid {
+    grid-template-columns: 1fr;
+  }
+}

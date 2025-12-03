@@ -1,0 +1,133 @@
+/* SECCIÓN COMPLETA */
+.beneficios-section {
+  position: relative;
+  background-color: var(--color-primary-dark);
+  padding: 90px 0;
+  overflow: hidden;
+}
+
+/* LÍNEA DECORATIVA */
+.beneficios-bg-line {
+  position: absolute;
+  bottom: -80px;
+  right: -160px;
+  width: 500px;
+  height: 500px;
+  background: url("/icons/linea-bene.png") no-repeat center/contain;
+  opacity: 0.25;
+  pointer-events: none;
+}
+
+/* CONTENEDOR PRINCIPAL */
+.beneficios-container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 0 40px;
+position: relative;
+  display: flex;
+  gap: 60px;
+
+  align-items: stretch;
+}
+
+/* COLUMNA IZQUIERDA */
+.beneficios-left {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* centra el texto verticalmente */
+}
+
+.beneficios-left h2 {
+  font-size: 42px;
+  color: var(--color-white);
+  font-weight: 700;
+  line-height: 1.2;
+  max-width: 520px;
+  margin-bottom: 30px;
+}
+
+/* BOTÓN IDÉNTICO AL RESTO DEL SITIO */
+.beneficios-btn {
+  background-color: var(--color-yellow);
+  color: var(--color-primary-dark);
+  font-size: 15px;
+  padding: 14px 28px;
+  border-radius: 12px;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  transition: 0.25s ease;
+  width: fit-content;
+}
+
+.beneficios-btn:hover {
+  background-color: #cddc39;
+  transform: translateY(-2px);
+}
+
+/* COLUMNA DERECHA */
+.beneficios-right {
+  flex: 1;
+  display: flex;
+  align-items: center; /* centra verticalmente para igualar altura */
+}
+
+.beneficios-right ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  z-index: 3;
+  gap: 35px;
+}
+
+.beneficios-right li {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+}
+
+.beneficios-right img {
+  width: 42px;
+  height: 42px;
+}
+
+.beneficios-right h3 {
+  color: var(--color-white);
+  font-size: 20px;
+  margin: 0 0 6px;
+}
+
+.beneficios-right p {
+  color: #dfe9e4;
+  font-size: 15px;
+  line-height: 1.5;
+  margin: 0;
+}
+.highlight-green {
+  color: var(--color-button-green);
+  font-weight: 700; /* se mantiene fuerte como <strong> */
+}
+.beneficios-line {
+  position: absolute;
+  bottom: -80px;
+  right: -150px;
+  width: 420px;
+  z-index: 0;
+  pointer-events: none;
+}
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  .beneficios-container {
+    flex-direction: column;
+    text-align: left;
+  }
+
+  .beneficios-right {
+    align-items: flex-start;
+  }
+  .beneficios-left h2{
+    font-size: 30px;
+  }
+}

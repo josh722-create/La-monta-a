@@ -1,0 +1,152 @@
+html {
+  box-sizing: border-box;
+}
+
+*, *::before, *::after {
+  box-sizing: inherit;
+}
+.header-container {
+  width: auto;
+  background-color: var(--color-background-light);
+  padding: 12px 24px;
+  border-bottom: 1px solid #E7EDEB;
+  position: sticky;
+  top: 0;
+  z-index: 999;
+}
+
+/* Layout principal */
+.header-content {
+  max-width: 1300px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* LOGO */
+.logo {
+  height: 42px;
+}
+
+/* Desktop menu */
+.nav-desktop {
+  display: flex;
+  gap: 32px;
+}
+
+.nav-desktop a {
+  font-family: var(--font-body);
+  text-decoration: none;
+  color: #4A4A4A;
+  font-size: 15px;
+}
+
+.nav-desktop a:hover {
+  color: var(--color-yellow);
+}
+
+/* Botón */
+.btn-agendar {
+  background-color: var(--color-primary-dark);
+  color: white !important;
+  padding: 10px 22px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-size: 15px;
+  font-family: var(--font-body);
+  transition: 0.2s ease;
+}
+
+.btn-agendar:hover {
+  background-color: var(--color-yellow);
+  transform: translateY(-2px);
+}
+
+/* HAMBURGER BUTTON */
+.hamburger {
+  display: none;
+  background: none;
+  border: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+}
+
+.hamburger .line {
+  width: 26px;
+  height: 3px;
+  background-color: #0c3d33;
+  transition: 0.3s ease;
+}
+
+.hamburger.open .line:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+
+.hamburger.open .line:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.open .line:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
+}
+
+/* ===================== */
+/* MENÚ MOBILE OVERLAY    */
+/* ===================== */
+
+.nav-mobile {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 100%; /* justo debajo del header */
+  background-color: #f2f8f2;
+  border-bottom: 1px solid #e7edeb;
+
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
+  padding: 0 20px;
+
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: max-height 0.35s ease, opacity 0.35s ease, padding 0.35s ease;
+  z-index: 998;
+}
+
+.nav-mobile.open {
+  max-height: 260px; /* lo suficiente para los links */
+  opacity: 1;
+  padding: 16px 20px 20px;
+}
+
+.nav-mobile a {
+  font-family: var(--font-body);
+  text-decoration: none;
+  color: #0c3d33;
+  font-size: 16px;
+}
+
+/* Botón dentro del menú móvil */
+.btn-agendar.mobile {
+  background-color: var(--color-primary-dark);
+  color: #ffffff;
+  padding: 10px 22px;
+  border-radius: 30px;
+  text-align: center;
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  .nav-desktop,
+  .btn-agendar {
+    display: none;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+}

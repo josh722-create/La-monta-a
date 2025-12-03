@@ -1,0 +1,181 @@
+/* Si ya tienes estas variables globales, no las repitas */
+:root {
+    --color-primary-dark: #003728;
+    --color-button-green: #99ba05;
+    --color-primary: #b7ce50;
+    --color-highlight: #c6f5c3;
+    --color-yellow: #feac2d;
+    --color-background-light: #f7f7f7;
+    --color-gray-soft: #e7edeb;
+    --color-white: #ffffff;
+    --color-black: #000000;
+}
+
+/* Contenedor general de la sección */
+.therapists-section {
+    background-color: var(--color-primary-dark);
+    color: var(--color-white);
+    padding: 4rem 1.5rem 3.5rem;
+}
+
+.therapists-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+/* Header superior */
+.therapists-header h2 {
+    color: var(--color-background-light);
+    font-size: 2.6rem;
+    line-height: 1.1;
+    font-weight: 700;
+    margin-bottom: 1.25rem;
+}
+
+.therapists-header p {
+    max-width: 620px;
+    font-size: 1rem;
+    line-height: 1.7;
+}
+
+/* Palabras en verde dentro del párrafo */
+.therapists-header p strong {
+    color: var(--color-primary);
+    /* verde claro */
+    font-weight: 700;
+}
+
+/* Grid de tarjetas */
+.therapists-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+    margin-bottom: 3.5rem;
+}
+
+/* Link envolviendo cada tarjeta */
+.therapist-card-link {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+    /* mantiene el color blanco del texto */
+}
+
+/* Tarjeta */
+.therapist-card {
+    border-radius: 18px;
+    overflow: hidden;
+
+    background-color: transparent;
+
+    transition:
+        transform 0.12s ease,
+        box-shadow 0.12s ease,
+        border-color 0.12s ease;
+}
+
+.therapist-card:hover {
+    transform: translateY(-4px);
+    border-color: rgba(255, 255, 255, 0.3);
+}
+
+/* Imagen */
+.therapist-image-wrapper img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    display: block;
+}
+
+/* Texto de la tarjeta */
+.therapist-body {
+    padding: 1.5rem 1.5rem 1.75rem;
+}
+
+.therapist-name {
+    color: var(--color-white);
+    font-size: 1rem;
+    font-weight: 700;
+    margin-bottom: 0.25rem;
+}
+
+.therapist-role {
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin-bottom: 0.9rem;
+    color: var(--color-highlight);
+    /* verde muy claro */
+}
+
+.therapist-description {
+    font-size: 0.88rem;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.88);
+}
+
+/* CTA inferior (texto + botón, sin caja aparte) */
+.therapists-cta {
+    margin-top: 3rem;
+    padding-top: 2.5rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.18);
+
+    display: flex;
+    flex-direction: column;
+    gap: 0.9rem;
+}
+
+.therapists-cta h3 {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: var(--color-background-light);
+}
+
+.therapists-cta p {
+    font-size: 0.95rem;
+    max-width: 540px;
+    line-height: 1.6;
+}
+
+/* Botón CTA */
+.therapists-cta-button {
+    align-self: flex-start;
+    border: none;
+    border-radius: 999px;
+    padding: 0.9rem 1.9rem;
+    font-size: 0.95rem;
+    font-weight: 600;
+    background-color: var(--color-button-green);
+    color: var(--color-primary-dark);
+    cursor: pointer;
+    transition:
+        transform 0.1s ease,
+        box-shadow 0.1s ease,
+        filter 0.1s ease;
+}
+
+.therapists-cta-button:hover {
+    filter: brightness(1.05);
+    transform: translateY(-1px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.25);
+}
+
+/* Responsive */
+@media (max-width: 640px) {
+    .therapists-section {
+        padding: 3rem 1.25rem 3rem;
+    }
+
+    .therapists-header h2 {
+        font-size: 2rem;
+    }
+
+    .therapists-cta {
+        align-items: flex-start;
+    }
+
+    .therapists-cta-button {
+        width: 100%;
+        text-align: center;
+    }
+}

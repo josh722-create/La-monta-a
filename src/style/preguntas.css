@@ -1,0 +1,142 @@
+/* ========================== */
+/* SECCIÓN PREGUNTAS FRECUENTES */
+/* ========================== */
+
+.faq-section {
+  position: relative;
+  padding: 90px 0 140px;
+  background-color: var(--color-primary-dark);
+  color: var(--color-white);
+  overflow: hidden;
+}
+
+/* Curva de fondo */
+.faq-bg {
+  position: absolute;
+  bottom: -120px;
+  right: -90px;
+  width: 520px;
+  pointer-events: none;
+}
+
+/* Contenedor general */
+.faq-container {
+  width: 90%;
+  max-width: 1150px;
+  margin: auto;
+  position: relative;
+  z-index: 2;
+}
+
+/* Header */
+.faq-header h2 {
+  font-size: 42px;
+  font-family: var(--font-title);
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+
+.faq-header p {
+  font-size: 16px;
+  width: 70%;
+  line-height: 1.6;
+  color: #dbe7df;
+}
+
+/* LISTA FAQ */
+.faq-list {
+  margin-top: 50px;
+  display: flex;
+  flex-direction: column;
+  gap: 35px;
+}
+
+.faq-item {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: 40px;
+  padding-bottom: 25px;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+
+.faq-item h3 {
+  font-size: 17px;
+  font-weight: 700;
+}
+
+.faq-item p {
+  font-size: 15px;
+  line-height: 1.6;
+  color: #d4e4dc;
+}
+
+/* BLOQUE FINAL */
+.faq-extra {
+  margin-top: 60px;
+  width: 350px;
+}
+
+.faq-extra h3 {
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 14px;
+}
+
+.faq-extra p {
+  font-size: 15px;
+  color: #d8e5de;
+  margin-bottom: 20px;
+}
+
+/* BOTÓN */
+.faq-btn {
+  background-color: var(--color-button-green);
+  color: var(--color-primary-dark);
+  padding: 12px 24px;
+  font-size: 15px;
+  font-weight: 600;
+  border-radius: 30px;
+  border: none;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.faq-btn:hover {
+  transform: translateY(-2px);
+  background-color: var(--color-yellow);
+}
+.faq-header h2,
+.faq-item h3,
+.faq-extra h3 {
+  color: var(--color-white) !important;
+}
+
+/* ========================== */
+/* RESPONSIVE */
+/* ========================== */
+
+@media (max-width: 900px) {
+  .faq-header p {
+    width: 100%;
+  }
+
+  .faq-item {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+}
+
+@media (max-width: 600px) {
+  .faq-section {
+    padding: 70px 0 120px;
+  }
+
+  .faq-extra {
+    width: 100%;
+    margin-top: 50px;
+  }
+
+  .faq-btn {
+    width: auto;
+  }
+}

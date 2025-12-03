@@ -1,0 +1,52 @@
+import "../style/Footer.css";
+import { Link } from "react-router-dom";
+function Footer() {
+  return (
+    <footer className="footer-section">
+      <div className="footer-top">
+
+        {/* LOGO */}
+        <img
+          src="/src/assets/logoblanco.png"
+          alt="La Montaña"
+          className="footer-logo"
+        />
+
+        {/* NAVEGACIÓN */}
+        <nav className="footer-nav">
+          <Link to="/nosotros">Sobre nosotros</Link>
+          <Link to="/terapeutas">Nuestros terapeutas</Link>
+          <a href="#agenda">Agenda tu sesión</a>
+        </nav>
+
+        {/* REDES SOCIALES */}
+        <div className="footer-socials">
+          <a href="#" aria-label="Facebook">
+            <img src="/src/assets/Facebook.png" alt="Facebook" />
+          </a>
+          <a href="#" aria-label="Instagram">
+            <img src="/src/assets/Instagram.png" alt="Instagram" />
+          </a>
+          <a href="#" aria-label="LinkedIn">
+            <img src="/src/assets/LinkedIn.png" alt="LinkedIn" />
+          </a>
+        </div>
+
+      </div>
+
+      <hr className="footer-divider" />
+
+      {/* PARTE INFERIOR */}
+      <div class="footer-bottom">
+        <p>© 2025 La Montaña. Todos los derechos reservados.</p>
+        <a href="#">Política de privacidad</a>
+        <a href="#">Términos y condiciones</a>
+        <a href="#">Cookies</a>
+      </div>
+
+    </footer>
+  );
+}
+
+export default Footer;
+
