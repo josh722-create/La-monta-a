@@ -5,9 +5,17 @@ import Nosotros from "./pages/Nosotros";
 import Terapeutas from "./pages/Terapeutas";
 import TerapeutaDetalle from "./pages/TerapeutaDetalle";
 import ScrollToTop from "./components/ScrollToTop";
+import { Helmet } from "react-helmet";
 
 function App() {
   return (
+    <>
+     <Helmet>
+        <meta
+          name="viewport"
+          content="width=device-width, initial-scale=1.0"
+        />
+      </Helmet>
     <Router>
       <ScrollToTop />         
       <Routes>
@@ -17,6 +25,7 @@ function App() {
         <Route path="/terapeutas/:slug" element={<TerapeutaDetalle />} />
       </Routes>
     </Router>
+    </>
   );
 }
 
