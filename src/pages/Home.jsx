@@ -168,7 +168,7 @@ function Home() {
 
         {/* TEXTO INFERIOR */}
         <div className="terapeutas-bottom">
-          <a href="#agendar" className="btn-terapeutas-bottom1">
+          <a href="/terapeutas" className="btn-terapeutas-bottom1">
             Ver más terapeutas
           </a>
           <h3>

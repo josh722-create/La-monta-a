@@ -38,7 +38,7 @@ function Footer() {
 
       {/* PARTE INFERIOR */}
       <div class="footer-bottom">
-        <p>© 2025 La Montaña. Todos los derechos reservados.</p>
+        <p>© 2026 La Montaña. Todos los derechos reservados.</p>
         <a href="#">Política de privacidad</a>
         <a href="#">Términos y condiciones</a>
         <a href="#">Cookies</a>
