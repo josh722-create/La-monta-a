@@ -102,12 +102,20 @@ function TerapeutaDetalle() {
     return s;
   };
 
+  const arrToText = (v) =>
+    Array.isArray(v) ? v.map(safe).filter(Boolean).join(", ") : safe(v);
+
   // campos
-  const cedula = safe(t.cedula_formacion);
-  const enfoque = safe(t.enfoque);
+  const cedula = safe(t.cedula);
+  const formacion = safe(t.formacion);
+  const modalidad = arrToText(t.modalidad);
   const ubicacion = [safe(t.ciudad), safe(t.pais)].filter(Boolean).join(", ");
-  const idiomas = safe(t.idiomas).replace(/\s*,\s*/g, ", ").replace(/,\s*$/, "");
-  const experienciaEn = safe(t.poblacion_atiende) || safe(t.formacion) || "";
+  const experienciaAnios = safe(t.experiencia);
+  const idiomas = arrToText(t.idiomas);
+  const poblacionAtiende = arrToText(t.poblacion_atiende);
+  const temasTrabaja = arrToText(t.temas_trabaja);
+  const enfoque = arrToText(t.enfoque);
+  const semblanza = safe(t.semblanza);
 
   return (
     <>
@@ -138,50 +146,76 @@ function TerapeutaDetalle() {
 
               <div className="therapist-detail-meta">
                 <div>
-                  <p>
-                    <span className="meta-label">Cédula:</span>{" "}
-                    {cedula || "—"}
-                  </p>
-                  <p>
-                    <span className="meta-label">Enfoque:</span>{" "}
-                    {enfoque || "—"}
-                  </p>
+                  {cedula && (
+                    <p>
+                      <span className="meta-label">Cédula:</span> {cedula}
+                    </p>
+                  )}
+                  {formacion && (
+                    <p>
+                      <span className="meta-label">Formación:</span> {formacion}
+                    </p>
+                  )}
+                  {experienciaAnios && (
+                    <p>
+                      <span className="meta-label">Años de experiencia:</span>{" "}
+                      {experienciaAnios}
+                    </p>
+                  )}
                 </div>
                 <div>
-                  <p>
-                    <span className="meta-label">Modalidad:</span>{" "}
-                    {safe(t.modalidad) || "—"}
-                  </p>
-                  <p>
-                    <span className="meta-label">Ubicación:</span>{" "}
-                    {ubicacion || "—"}
-                  </p>
+                  {modalidad && (
+                    <p>
+                      <span className="meta-label">Modalidad:</span> {modalidad}
+                    </p>
+                  )}
+                  {ubicacion && (
+                    <p>
+                      <span className="meta-label">Ubicación:</span> {ubicacion}
+                    </p>
+                  )}
                 </div>
               </div>
 
               {/* Semblanza */}
-              <div className="therapist-detail-block">
-                <p className="block-label">Semblanza:</p>
-                <div className="block-box">
-                  {safe(t.semblanza) || "—"}
+              {semblanza && (
+                <div className="therapist-detail-block">
+                  <p className="block-label">Semblanza:</p>
+                  <div className="block-box">{semblanza}</div>
                 </div>
-              </div>
+              )}
 
-              {/* Experiencia / población */}
-              <div className="therapist-detail-block">
-                <p className="block-label">Experiencia en:</p>
-                <div className="block-box">
-                  {experienciaEn || "—"}
+              {/* Población que atiende */}
+              {poblacionAtiende && (
+                <div className="therapist-detail-block">
+                  <p className="block-label">Población que atiende:</p>
+                  <div className="block-box">{poblacionAtiende}</div>
                 </div>
-              </div>
+              )}
+
+              {/* Temas que trabaja */}
+              {temasTrabaja && (
+                <div className="therapist-detail-block">
+                  <p className="block-label">Temas que trabaja:</p>
+                  <div className="block-box">{temasTrabaja}</div>
+                </div>
+              )}
+
+              {/* Enfoque terapéutico */}
+              {enfoque && (
+                <div className="therapist-detail-block">
+                  <p className="block-label">Enfoque terapéutico:</p>
+                  <div className="block-box">{enfoque}</div>
+                </div>
+              )}
 
               {/* Idiomas */}
-              <div className="therapist-detail-block">
-                <p className="block-label">Idiomas:</p>
-                <div className="block-box">
-                  {idiomas || "—"}
+              {idiomas && (
+                <div className="therapist-detail-block">
+                  <p className="block-label">Idiomas:</p>
+                  <div className="block-box">{idiomas}</div>
                 </div>
-              </div>
+              )}
             </div>
           </div>
 

@@ -13,12 +13,12 @@ app.get("/api/terapeutas/featured", async (req, res) => {
     const { rows } = await pool.query(`
       SELECT
         id,
-        "Nombre" AS nombre,
-        "Apellido_paterno" AS apellido_paterno,
-        "Apellido_materno" AS apellido_materno,
-        "Formación" AS formacion,
-        "Semblanza" AS semblanza
-      FROM public.la_montania_registro_terapeuta
+        nombre,
+        apellido_paterno,
+        apellido_materno,
+        grado_academico AS formacion,
+        semblanza
+      FROM public.profesionales
       ORDER BY id ASC
       LIMIT 6
     `);
@@ -45,10 +45,10 @@ app.get("/api/terapeutas", async (req, res) => {
       params.push(q);
       where += `
         AND (
-          "Nombre" ILIKE '%' || $${params.length} || '%' OR
-          "Apellido_paterno" ILIKE '%' || $${params.length} || '%' OR
-          "Apellido_materno" ILIKE '%' || $${params.length} || '%' OR
-          "Ciudad" ILIKE '%' || $${params.length} || '%'
+          nombre ILIKE '%' || $${params.length} || '%' OR
+          apellido_paterno ILIKE '%' || $${params.length} || '%' OR
+          apellido_materno ILIKE '%' || $${params.length} || '%' OR
+          ciudad ILIKE '%' || $${params.length} || '%'
         )
       `;
     }
@@ -64,16 +64,15 @@ app.get("/api/terapeutas", async (req, res) => {
       `
       SELECT
         id,
-        "Nombre" AS nombre,
-        "Apellido_paterno" AS apellido_paterno,
-        "Apellido_materno" AS apellido_materno,
-        "Ciudad" AS ciudad,
-        "País" AS pais,
-        "Modalidad" AS modalidad,
-        "Idiomas_terapeuta" AS idiomas,
-        "Formación" AS formacion,
-        "Paquete / tradicional" AS paquete
-      FROM public.la_montania_registro_terapeuta
+        nombre,
+        apellido_paterno,
+        apellido_materno,
+        ciudad,
+        pais,
+        modalidad,
+        idiomas,
+        grado_academico AS formacion
+      FROM public.profesionales
       ${where}
       ORDER BY id ASC
       LIMIT $${params.length}
@@ -99,25 +98,21 @@ app.get("/api/terapeutas/:id", async (req, res) => {
       `
       SELECT
         id,
-        "Nombre" AS nombre,
-        "Apellido_paterno" AS apellido_paterno,
-        "Apellido_materno" AS apellido_materno,
-        "Ciudad" AS ciudad,
-        "País" AS pais,
-        "Modalidad" AS modalidad,
-        "Idiomas_terapeuta" AS idiomas,
-        "Formación" AS formacion,
-        "Cédula_profesional_formación" AS cedula_formacion,
-        "Enfoque_terapéutico" AS enfoque,
-        "Semblanza" AS semblanza,
-        "Población_que_atiende" AS poblacion_atiende,
-        "Población_que_no_atiende" AS poblacion_no_atiende,
-        "Maestría" AS maestria,
-        "Cédula_profesional_maestría" AS cedula_maestria,
-        "Escuela_procedencia_formación" AS escuela_formacion,
-        "Escuela_procedencia_maestría" AS escuela_maestria,
-        "Paquete / tradicional" AS paquete
-      FROM public.la_montania_registro_terapeuta
+        nombre,
+        apellido_paterno,
+        apellido_materno,
+        ciudad,
+        pais,
+        idiomas,
+        poblacion_atiende,
+        temas_trabaja,
+        modalidad,
+        modelo_trabajo AS enfoque,
+        experiencia,
+        grado_academico AS formacion,
+        cedula,
+        semblanza
+      FROM public.profesionales
       WHERE id = $1
       LIMIT 1
       `,

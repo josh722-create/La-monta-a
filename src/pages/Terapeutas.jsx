@@ -129,7 +129,8 @@ function Terapeutas() {
                   const descParts = [];
                   const cityCountry = [t.ciudad, t.pais].filter(Boolean).join(", ");
                   if (cityCountry) descParts.push(cityCountry);
-                  if (t.modalidad) descParts.push(t.modalidad);
+                  const modalidadTxt = Array.isArray(t.modalidad) ? t.modalidad.filter(Boolean).join(", ") : t.modalidad;
+                  if (modalidadTxt) descParts.push(modalidadTxt);
                   const description = descParts.join(" • ") || "Ver perfil";
 
                   return (
